@@ -18,6 +18,10 @@
  */
 // write your code here
 
+var bandAlbums = ["Nirvana" : "Nevermind",
+                  "Blondie" : "Parallel Lines",
+                  "The Kinks": "Low Budget",
+                  "The Beatles" : "Sgt. Pepper's Lonely Hearts Club Band"]
 
 
 
@@ -26,15 +30,15 @@
  */
 // write your code here
 
-
-
+bandAlbums["Pixies"] = "Doolittle"
+bandAlbums
 
 /*: question3
  ### 3. We don't care that much about The Kinks. Delete them from the dictionary you created in Question 1.
  */
 // write your code here
 
-
+bandAlbums["The Kinks"] = nil
 
 
 
@@ -44,7 +48,9 @@
 let bandName = "Nirvana"
 // write your code here
 
-
+if let bandAlbum = bandAlbums[bandName] {
+        print("\(bandName)'s top-selling album was \(bandAlbum)")
+}
 
 
 /*: question5
@@ -52,7 +58,9 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
+for (band, bandAlbum) in bandAlbums {
+    print("\(band)'s top-selling album was \(bandAlbum)")
+}
 
 
 /*: question6
@@ -65,7 +73,7 @@ let bandName = "Nirvana"
 /*: question7
  ### 7. Imagine every student in every grade in a high school took an exam. Each student got a letter grade based on their test results (A, B, C, D, and F). The results were averaged together per grade. How could you represent this mapping of grades to exam average?
  */
-
+// A dictinary with the key's being A, B, C, D, and F and the values for each of those being an array of student's who got that grade
 
 
 
@@ -79,7 +87,7 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
+let examResults = [9 : "B", 10 : "A", 11 : "C", 12: "B"]
 
 
 /*: question9
@@ -87,7 +95,9 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
+for (grade, score) in examResults {
+    print("Grade \(grade) got \(score)")
+}
 
 
 /*: question10
@@ -95,8 +105,17 @@ let bandName = "Nirvana"
  */
 // write your code here
 
+var highestScore = "F"
+var gradeWithHighestScore = 0
 
+for (grade, score) in examResults {
+    if score < highestScore {
+        highestScore = score;
+        gradeWithHighestScore = grade
+    }
+}
 
+print("Grade \(gradeWithHighestScore) got the highest score with \(highestScore)")
 
 /*:
  [Solution](solution)
